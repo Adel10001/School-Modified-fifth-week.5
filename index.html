@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: #f9f9f9;
+            margin: 20px;
+			font-size: 16px;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .submit-btn {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 60px;
+            font-size: 14px;
+			font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: auto;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong-answer {
+            color: red;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+			font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="quiz-container">
+    <h1>اختبار قصير في بطاقة الأسبوع الخامس</h1>
+    <form id="quizForm">
+        <!-- حقل اسم الطالب -->
+        <label style="font-weight: bold; font-size: 18px;"> اسم الطالب: </label>
+        <input type="text" id="name" name="name" placeholder="أدخل اسمك هنا" required>
+
+        <!-- الأسئلة -->
+        <div class="question" data-question="q1">
+            <p>1.  أي من الطرق التالية يمكن استخدامها لفصل القمح عن القش؟</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a">  الغربال.</label>
+                <label><input type="radio" name="q1" value="b"> المذراة.</label>
+                <label><input type="radio" name="q1" value="c"> قمع الفصل.</label>
+            </div>
+        </div>
+
+        <div class="question" data-question="q2">
+            <p>2. تعتمد طريقة الفصل بالترويق على خاصية؟</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> الترسيب.</label>
+                <label><input type="radio" name="q2" value="b"> النفاذية.</label>
+                <label><input type="radio" name="q2" value="c"> المغناطيسية.</label>
+            </div>
+        </div>
+
+        <div class="question" data-question="q3">
+            <p>3. أي من الأمثلة التالية يُمثل تغيرًا فيزيائيًا؟</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> احتراق الوقود.</label>
+                <label><input type="radio" name="q3" value="b"> عفن الفواكه.</label>
+                <label><input type="radio" name="q3" value="c"> انصهار الجليد.</label>
+            </div>
+        </div>
+		<!-- السؤال الرابع -->
+        <div class="question" data-question="q4">
+            <p>4. ما التغير الذي يطرأ على المادة عند حدوث تغير كيميائي؟</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> تتغير الكتلة فقط.</label>
+                <label><input type="radio" name="q4" value="b"> تنتج مادة جديدة بصفات جديدة.</label>
+                <label><input type="radio" name="q4" value="c"> تتغير حالتها فقط.</label>
+            </div>
+        </div>
+		
+		<!-- السؤال الخامس -->
+        <div class="question" data-question="q5">
+            <p>5. إذا كان لديك خليط من نشارة الخشب وبرادة الحديد، وأردت فصلهما بأسرع طريقة ممكنة، فماذا ستفعل؟</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> استخدام الغربال.</label>
+                <label><input type="radio" name="q5" value="b"> استخدام اليد.</label>
+                <label><input type="radio" name="q5" value="c"> استخدام مغناطيس.</label>
+            </div>
+        </div>
+		<!-- السؤال السادس -->
+        <div class="question" data-question="q6">
+            <p>6. طلب المعلم من الطلاب اقتراح طريقة لفصل الماء عن الملح بعد إذابته، ما الطريقة الأفضل؟ </p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> التقطير.</label>
+				<label><input type="radio" name="q6" value="b"> الترشيح.</label>
+                <label><input type="radio" name="q6" value="c"> الترويق.</label>
+            </div>
+        </div>
+		
+				<!-- السؤال السابع -->
+        <div class="question" data-question="q7">
+            <p>7. لاحظ سامي أن قطعة من الحديد تغير لونها وشكلها بعد تركها في الماء مدة طويلة. أي من التالي يُفسر ما حدث؟ </p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a">التغير فيزيائي لأنه تغير الحجم فقط.</label>
+				<label><input type="radio" name="q7" value="b">التغير كيميائي لأنه تكونت مادة جديدة.</label>
+                <label><input type="radio" name="q7" value="c"> لا يُعد تغيرًا لأنه طبيعي</label>
+            </div>
+        </div>
+
+				<!-- السؤال الثامن -->
+        <div class="question" data-question="q8">
+            <p>8. قام أحد الطلاب بإذابة السكر في الماء، ثم وضع المزيج في المجمد حتى تجمد. ما نوع التغير الذي حدث؟ </p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a">تغير في التركيب.</label>
+				<label><input type="radio" name="q8" value="b">تغير كيميائي.</label>
+                <label><input type="radio" name="q8" value="c"> تغير فيزيائي.</label>
+            </div>
+        </div>
+		
+				<!-- السؤال التاسع -->
+        <div class="question" data-question="q9">
+            <p>9. عند تسخين السكر على النار، تغيّر لونه وانبعثت منه رائحة، ما نوع التغير الذي حدث؟</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="b">فيزيائي لأنه تغير في اللون.</label>
+				<label><input type="radio" name="q9" value="a">فيزيائي لأنه لم يتغير الطعم.</label>
+                <label><input type="radio" name="q9" value="c">كيميائي لأنه نتجت مادة جديدة.</label>
+            </div>
+        </div>
+		
+		
+						<!-- السؤال العاشر -->
+        <div class="question" data-question="q10">
+            <p>10. ذهبت سارة مع والدها إلى المزرعة، وأثناء السير لاحظت أن بعض المزارعين يستخدمون المذراة لفصل القمح عن القش. لكن عندما وصلت إلى قسم آخر من المزرعة، رأت عاملًا يستخدم الغربال لتنقية الطحين. لماذا استخدم المزارعون المذراة في الحالة الأولى والغربال في الحالة الثانية؟</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> لأن الغربال لا يمكنه فصل القش عن القمح.</label>
+				<label><input type="radio" name="q10" value="b"> لأن المذراة تفصل المواد الخفيفة عن الثقيلة، بينما الغربال يفصل حسب حجم الجزيئات . </label>
+                <label><input type="radio" name="q10" value="c">  لأن المزارعين لا يحبون استخدام الغربال . </label>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">إرسال الإجابات</button>
+        <div id="result" class="result"></div>
+    </form>
+</div>
+
+<script>
+    // الإجابات الصحيحة لكل سؤال
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'a',
+        q3: 'c',
+		q4: 'c',
+		q5: 'c',
+	    q6: 'a',
+		q7: 'b',
+		q8: 'c',
+		q9: 'c',
+		q10: 'b',		
+    };
+
+    // عند إرسال النموذج
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // التأكد من إدخال اسم الطالب
+        const nameField = document.getElementById("name");
+        if (!nameField.value.trim()) {
+            alert("يرجى إدخال اسم الطالب.");
+            return;
+        }
+
+        let score = 0;
+        let data = {
+            name: nameField.value.trim()
+        };
+
+        // التحقق من الإجابات
+        for (let q in correctAnswers) {
+            const questionDiv = document.querySelector(`[data-question="${q}"]`); 
+            const selected = questionDiv.querySelector(`input[name="${q}"]:checked`);
+            const correctValue = correctAnswers[q];
+
+            if (selected) {
+                const labels = questionDiv.querySelectorAll('label');
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    label.style.color = '';
+                    label.style.fontWeight = '';
+                    if (input.value === correctValue) {
+                        label.classList.add('correct-answer');
+                    } else if (input.checked && input.value !== correctValue) {
+                        label.classList.add('wrong-answer');
+                    }
+                });
+
+                if (selected.value === correctValue) score++;
+                data[q] = selected.value;
+            } else {
+                data[q] = "لم يتم اختيار إجابة";
+            }
+        }
+
+        // إضافة الدرجة والوقت
+        data.score = score;
+        data.timestamp = new Date().toLocaleString("ar-PS");
+		timeZone: "Asia/Gaza"
+
+        // عرض النتيجة
+        document.getElementById("result").textContent = `عزيزي الطالب:  ${data.name}، لقد حصلت على ${score} من ${Object.keys(correctAnswers).length} درجات.`;
+
+        // إرسال البيانات إلى Google Sheets عبر API
+        fetch("https://script.google.com/macros/s/AKfycbwIINQ1elLA9iu6nwp6ihh-gOdGlqr5NNiNa1IwN_tmX6dUgh4TptNGW4vvjWOdbXCY/exec", {
+            method: "POST",
+            body: JSON.stringify(data)
+        }).then(res => {
+        if (res.ok) {
+    //      alert("✅ تم الإرسال بنجاح!");
+          this.reset(); 
+        } else {
+    //      alert("❌ حدث خطأ أثناء الإرسال.");
+        }
+      }).catch(err => {
+    //    alert("❌ فشل الاتصال بالخادم.");
+        console.error(err);
+      });
+    });
+</script>
+</body>
+</html>
